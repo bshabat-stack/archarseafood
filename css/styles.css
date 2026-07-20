@@ -183,6 +183,10 @@ header { position: sticky; top: 0; z-index: 50; background: var(--white); border
                border-radius: var(--radius-card); padding: 16px 20px; font-size: 15px; line-height: 1.5; }
 .form-notice.show { display: block; }
 .form-notice a { color: var(--archar-red-dark); font-weight: 700; }
+.field .is-invalid { border-color: var(--archar-red); outline: 2px solid var(--archar-red); outline-offset: 1px; }
+.hp-field { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.is-hidden { display: none; }
+.form-success h3 { margin-bottom: 8px; }
 @media (max-width: 900px) { .wholesale-grid, .form-row { grid-template-columns: 1fr; } }
 
 /* Reviews */

@@ -244,9 +244,15 @@
       </ul>
       <p class="small">Prefer the phone? So do we: <a href="tel:+17322495835">(732) 249-5835</a></p>
     </div>
-    <form class="form-card" action="#" method="post">
+    <form class="form-card" id="inquiry-form" action="#" method="post" novalidate>
       <h3>Wholesale &amp; pre-order inquiry</h3>
       <p class="small">Tell us what you need and we'll get back to you.</p>
+      <!-- Honeypot: hidden from humans, catches bots -->
+      <div class="hp-field" aria-hidden="true">
+        <label for="f-website">Website</label>
+        <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <input type="hidden" name="source" value="direct">
       <div class="form-row">
         <div class="field">
           <label for="f-name">Name</label>
@@ -271,8 +277,12 @@
         <textarea id="f-msg" name="message" rows="4" placeholder="e.g. 2 bushels of blue claws for Saturday pickup"></textarea>
       </div>
       <button class="btn btn-secondary" type="submit">Send inquiry</button>
-      <p class="form-notice" role="status" tabindex="-1">Online inquiries are coming soon — for now, the fastest way to reach us is a quick call: <a href="tel:+17322495835">(732) 249-5835</a>.</p>
+      <p class="form-notice" role="status" tabindex="-1"></p>
     </form>
+    <div class="form-card form-success is-hidden" id="inquiry-success" role="status" tabindex="-1">
+      <h3>Got it — we'll call you back</h3>
+      <p>Thanks for reaching out. We'll get back to you as soon as we're off the counter. In a hurry? <a href="tel:+17322495835">(732) 249-5835</a>.</p>
+    </div>
   </div>
 </section>
 
