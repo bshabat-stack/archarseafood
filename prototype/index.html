@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archar Seafood — Fresh Fish Daily | Somerset, NJ</title>
+<meta name="description" content="Archar Seafood is Somerset's neighborhood fish market. Wild-caught fish cut to order in front of you, live blue crabs by the bushel, steaming on-site, and wholesale supply to local restaurants. 725 Hamilton St, Somerset, NJ. Call (732) 249-5835.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Archar Seafood",
+  "description": "Neighborhood retail seafood market with fresh fish cut to order, live blue crabs, on-site steaming, and wholesale supply.",
+  "telephone": "+17322495835",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "725 Hamilton St",
+    "addressLocality": "Somerset",
+    "addressRegion": "NJ",
+    "postalCode": "08873",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "11:00", "closes": "17:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "16:00"}
+  ]
+}
+</script>
+<style>
+  /* ===== Archar Seafood Design System v1.0 tokens ===== */
+  :root {
+    --archar-red: #C8102E;      --archar-red-dark: #A00D26;  --archar-red-tint: #FBE9EC;
+    --harbor-navy: #16355C;     --navy-ink: #0E2240;         --navy-tint: #DCE8F5;
+    --white: #FFFFFF;           --sea-salt: #EFF3F6;
+    --color-text: #33404F;      --color-link: #2E5FB8;       --color-border: #D4DCE4;
+    --font-display: 'Archivo', sans-serif;
+    --font-body: 'Hanken Grotesk', sans-serif;
+    --radius-card: 8px; --radius-btn: 8px; --radius-input: 3px;
+    --shadow-card: 0 2px 12px rgba(14,34,64,.10);
+    --container: 1160px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); font-size: 17px; line-height: 1.6; color: var(--color-text); background: var(--white); }
+  img { max-width: 100%; display: block; }
+  a { color: var(--color-link); }
+
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.01em; line-height: 1.2; color: var(--navy-ink); }
+  h1 { font-size: clamp(2.4rem, 5vw, 3.4rem); font-weight: 900; }
+  h2 { font-size: clamp(1.9rem, 4vw, 2.45rem); }
+  h3 { font-size: 24px; }
+  h4 { font-size: 19px; }
+  .small { font-size: 14px; line-height: 1.5; }
+
+  .wrap { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+  section { padding: 96px 0; }
+
+  /* Buttons — display font, 800, sentence case */
+  .btn { display: inline-block; font-family: var(--font-display); font-weight: 800; font-size: 17px;
+         padding: 14px 28px; border-radius: var(--radius-btn); text-decoration: none; border: 2px solid transparent;
+         transition: background .15s ease, color .15s ease, border-color .15s ease; }
+  .btn-primary { background: var(--archar-red); color: #fff; }
+  .btn-primary:hover { background: var(--archar-red-dark); }
+  .btn-secondary { background: var(--harbor-navy); color: #fff; }
+  .btn-secondary:hover { background: var(--navy-ink); }
+  .btn-ghost { border-color: var(--harbor-navy); color: var(--harbor-navy); background: transparent; }
+  .btn-ghost:hover { background: var(--harbor-navy); color: #fff; }
+  .btn-ghost-light { border-color: #fff; color: #fff; background: transparent; }
+  .btn-ghost-light:hover { background: #fff; color: var(--harbor-navy); }
+
+  /* Badges — pill */
+  .badge { display: inline-block; font-size: 13px; font-weight: 700; padding: 4px 14px; border-radius: 999px; }
+  .badge-red { background: var(--archar-red-tint); color: var(--archar-red-dark); }
+  .badge-navy { background: var(--navy-tint); color: var(--harbor-navy); }
+
+  .eyebrow { display: block; font-family: var(--font-display); font-weight: 800; font-size: 15px;
+             color: var(--archar-red); margin-bottom: 12px; }
+  .on-dark .eyebrow { color: #FBB9C5; }
+
+  /* Prototype ribbon */
+  .ribbon { background: var(--navy-ink); color: #C9D6E8; text-align: center; font-size: 13px; padding: 7px 16px; }
+
+  /* Header — sticky white bar */
+  header { position: sticky; top: 0; z-index: 50; background: var(--white); border-bottom: 1px solid var(--color-border); }
+  .nav-inner { max-width: var(--container); margin: 0 auto; padding: 12px 24px;
+               display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand img { height: 48px; width: 48px; border-radius: 50%; }
+  .brand span { font-family: var(--font-display); font-weight: 900; font-size: 1.3rem; color: var(--navy-ink); }
+  .brand span em { font-style: normal; color: var(--archar-red); }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a { font-weight: 600; font-size: 16px; text-decoration: none; color: var(--harbor-navy); }
+  .nav-links a:hover { color: var(--archar-red); }
+  .nav-call { font-family: var(--font-display); font-weight: 800; background: var(--archar-red); color: #fff !important;
+              padding: 10px 20px; border-radius: var(--radius-btn); }
+  .nav-call:hover { background: var(--archar-red-dark); color: #fff !important; }
+  @media (max-width: 860px) { .nav-links a:not(.nav-call) { display: none; } }
+
+  /* Hero — navy band */
+  .hero { background: var(--harbor-navy); color: #fff; padding: 96px 0; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; }
+  .hero h1 { color: #fff; margin: 0 0 20px; }
+  .hero p { font-size: 1.2rem; color: #D7E1EF; max-width: 34em; margin-bottom: 32px; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero-proof { margin-top: 40px; display: flex; gap: 32px; flex-wrap: wrap; font-size: 15px; color: #B9C8DD; }
+  .hero-proof strong { display: block; font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: #fff; }
+  .hero-photo { background: #fff; padding: 12px; border-radius: var(--radius-card); box-shadow: var(--shadow-card); transform: rotate(2deg); }
+  .hero-photo img { border-radius: 4px; aspect-ratio: 4/3.4; object-fit: cover; width: 100%; }
+  .hero-photo figcaption { font-size: 14px; color: var(--color-text); padding: 10px 4px 2px; }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+  /* Three steps */
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-top: 48px; }
+  .step { background: var(--white); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: 32px; }
+  .step-num { font-family: var(--font-display); font-weight: 900; font-size: 2rem; color: var(--archar-red); margin-bottom: 16px; }
+  .step h3 { margin-bottom: 8px; }
+
+  /* Fresh catch — navy tint band */
+  .catch { background: var(--navy-tint); }
+  .catch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 24px; margin-top: 48px; }
+  .product { background: var(--white); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: 24px; }
+  .product h4 { margin: 12px 0 6px; }
+  .product p { font-size: 14px; line-height: 1.5; margin-bottom: 10px; }
+  .product .price { font-family: var(--font-display); font-weight: 800; color: var(--archar-red); font-size: 15px; }
+  .bushel-bar { margin-top: 48px; background: var(--white); border-radius: var(--radius-card); box-shadow: var(--shadow-card);
+                padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .bushel-bar h3 { margin-bottom: 4px; }
+
+  /* Blue crab — red accent band with tilted photo cards */
+  .crab { background: var(--archar-red); color: #fff; overflow: hidden; }
+  .crab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .crab-card { background: var(--white); border-radius: var(--radius-card); box-shadow: var(--shadow-card);
+               padding: 48px; max-width: 640px; }
+  .crab-card h2 { margin-bottom: 16px; }
+  .crab-card p { margin-bottom: 16px; }
+  .crab-card .btn { margin-top: 8px; }
+  .crab-photos { position: relative; min-height: 420px; }
+  .crab-photos figure { position: absolute; background: #fff; padding: 10px 10px 14px; border-radius: var(--radius-card);
+                        box-shadow: var(--shadow-card); width: 62%; }
+  .crab-photos img { border-radius: 4px; aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+  .crab-photos .ph1 { top: 0; left: 0; transform: rotate(-3deg); }
+  .crab-photos .ph2 { top: 34%; right: 0; transform: rotate(2.5deg); }
+  .crab-photos .ph3 { bottom: 0; left: 8%; transform: rotate(-1.5deg); width: 56%; }
+  @media (max-width: 900px) {
+    .crab-grid { grid-template-columns: 1fr; }
+    .crab-photos { min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .crab-photos figure { position: static; width: auto; transform: rotate(-1.5deg); }
+    .crab-photos .ph2 { transform: rotate(1.5deg); }
+    .crab-photos .ph3 { display: none; }
+  }
+
+  /* Story — full-bleed photo with centered floating card */
+  .story { background: linear-gradient(rgba(14,34,64,.55), rgba(14,34,64,.55)), url('../images/archar-01.jpg') center/cover; padding: 128px 0; }
+  .story-card { background: var(--white); border-radius: var(--radius-card); box-shadow: var(--shadow-card);
+                padding: 48px; max-width: 640px; margin: 0 auto; }
+  .story-card h2 { margin: 12px 0 16px; }
+  .story-card p { margin-bottom: 16px; }
+  .story-card p:last-child { margin-bottom: 0; }
+
+  /* Sustainability — navy tint band */
+  .sustain { background: var(--navy-tint); }
+  .sustain-inner { max-width: 720px; }
+  .sustain h2 { margin-bottom: 16px; }
+  .sustain p { margin-bottom: 16px; }
+
+  /* Wholesale */
+  .wholesale-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .wholesale h2 { margin-bottom: 16px; }
+  .wholesale ul { list-style: none; margin: 24px 0; }
+  .wholesale li { padding: 10px 0 10px 32px; position: relative; }
+  .wholesale li::before { content: ""; position: absolute; left: 0; top: 17px; width: 14px; height: 14px;
+                          border-radius: 50%; background: var(--navy-tint); border: 4px solid var(--harbor-navy); box-sizing: border-box; }
+  .form-card { background: var(--white); border: 1px solid var(--color-border); border-radius: var(--radius-card);
+               box-shadow: var(--shadow-card); padding: 48px; }
+  .form-card h3 { margin-bottom: 8px; }
+  .form-card .small { margin-bottom: 24px; }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-weight: 700; font-size: 14px; color: var(--navy-ink); margin-bottom: 6px; }
+  .field input, .field select, .field textarea {
+    width: 100%; font-family: var(--font-body); font-size: 16px; color: var(--color-text);
+    padding: 12px 14px; border: 1.5px solid var(--color-border); border-radius: var(--radius-input); background: #fff; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--harbor-navy); outline-offset: 1px; border-color: var(--harbor-navy); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 900px) { .wholesale-grid, .form-row { grid-template-columns: 1fr; } }
+
+  /* Reviews */
+  .reviews { background: var(--sea-salt); }
+  .reviews-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .stars { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: var(--navy-ink); }
+  .stars span { color: var(--archar-red); letter-spacing: 2px; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-top: 48px; }
+  .review { background: var(--white); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 32px; }
+  .review blockquote { font-size: 17px; margin-bottom: 16px; }
+  .review cite { font-style: normal; font-size: 14px; font-weight: 700; color: var(--harbor-navy); }
+
+  /* Visit — navy band */
+  .visit { background: var(--harbor-navy); color: #fff; }
+  .visit h2 { color: #fff; margin-bottom: 16px; }
+  .visit-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; }
+  .visit p { color: #D7E1EF; margin-bottom: 24px; }
+  .visit a { color: #AFC6E4; }
+  .hours { width: 100%; border-collapse: collapse; margin: 8px 0 24px; }
+  .hours td { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.18); color: #D7E1EF; }
+  .hours td:last-child { text-align: right; color: #fff; font-weight: 600; }
+  .visit-card { background: var(--white); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 48px; align-self: start; }
+  .visit-card h3 { margin-bottom: 8px; }
+  .visit-card p { color: var(--color-text); margin-bottom: 24px; }
+  .visit-card .btn { width: 100%; text-align: center; margin-bottom: 12px; }
+  @media (max-width: 900px) { .visit-grid { grid-template-columns: 1fr; } }
+
+  /* Footer — sea salt */
+  footer { background: var(--sea-salt); padding: 48px 0 32px; }
+  .foot-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 32px; }
+  .foot-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .foot-links a { font-size: 14px; font-weight: 600; color: var(--harbor-navy); text-decoration: none; }
+  .foot-links a:hover { color: var(--archar-red); }
+  .fine { border-top: 1px solid var(--color-border); padding-top: 24px; font-size: 14px; color: var(--color-text); }
+</style>
+</head>
+<body>
+
+<div class="ribbon">Prototype for review — placeholder photos &amp; unconfirmed details (founding year, Fri–Sat hours, sustainability copy) flagged for Michael's sign-off.</div>
+
+<header>
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <img src="../images/archar-logo.jpeg" alt="Archar Seafood logo">
+      <span>Archar <em>Seafood</em></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#catch">Fresh catch</a>
+      <a href="#crabs">Blue crabs</a>
+      <a href="#story">Our story</a>
+      <a href="#wholesale">Wholesale</a>
+      <a href="#visit">Visit us</a>
+      <a class="nav-call" href="tel:+17322495835">Call (732) 249-5835</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Hero — navy band ===== -->
+<section class="hero on-dark" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Somerset's neighborhood fish market</span>
+      <!-- "since 1983" pending owner confirmation -->
+      <h1>Fresh fish daily since 1983</h1>
+      <p>Wild-caught fish cut to order right in front of you, live blue crabs by the bushel, and lobsters steamed while you wait — on Hamilton Street for over 40 years.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:+17322495835">Call to order</a>
+        <a class="btn btn-ghost-light" href="#catch">See today's catch</a>
+      </div>
+      <div class="hero-proof">
+        <div><strong>4.9 ★</strong> 400+ customer ratings</div>
+        <div><strong>40+ years</strong> on Hamilton Street</div>
+        <div><strong>Cut to order</strong> right at the counter</div>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="../images/archar-04.jpg" alt="The Archar Seafood counter lined with fresh whole fish on ice">
+      <figcaption>The counter on a weekday morning — everything on ice, nothing pre-cut.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== The Archar Way ===== -->
+<section id="way">
+  <div class="wrap">
+    <span class="eyebrow">The Archar way</span>
+    <h2>From the boat to your table, three honest steps</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Sourced daily</h3>
+        <p>Wild-caught fish and live shellfish come in fresh — what's in the case is what came in, not what's left over.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Cut in front of you</h3>
+        <p>Pick your fish and we fillet, scale, and clean it while you watch. You see exactly what you're taking home.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Steamed &amp; seasoned</h3>
+        <p>Lobsters and crabs steamed on-site, seasoned the way you like. Call ahead and it's ready when you are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Fresh catch — navy-tint band ===== -->
+<section class="catch" id="catch">
+  <div class="wrap">
+    <span class="eyebrow">Fresh catch</span>
+    <h2>What's in the case</h2>
+    <div class="catch-grid">
+      <div class="product">
+        <span class="badge badge-red">Customer favorite</span>
+        <h4>Blue claw crabs</h4>
+        <p>Live Jersey blue claws — females a local favorite. By the dozen or the bushel.</p>
+        <div class="price">Market price — call</div>
+      </div>
+      <div class="product">
+        <span class="badge badge-navy">Wild-caught</span>
+        <h4>Whiting &amp; porgies</h4>
+        <p>Everyday favorites, whole or filleted to order at the counter.</p>
+        <div class="price">Market price — call</div>
+      </div>
+      <div class="product">
+        <span class="badge badge-navy">Wild-caught</span>
+        <h4>Red snapper &amp; croakers</h4>
+        <p>Rotating selection depending on the day's catch — call for what's in.</p>
+        <div class="price">Market price — call</div>
+      </div>
+      <div class="product">
+        <span class="badge badge-navy">Fillet counter</span>
+        <h4>Salmon &amp; sea bass</h4>
+        <p>Cut to the thickness you want, skin on or off.</p>
+        <div class="price">Market price — call</div>
+      </div>
+      <div class="product">
+        <span class="badge badge-navy">Fillet counter</span>
+        <h4>Catfish &amp; tilapia</h4>
+        <p>Fresh fillets, cleaned and bagged while you wait.</p>
+        <div class="price">Market price — call</div>
+      </div>
+      <div class="product">
+        <span class="badge badge-navy">Shellfish</span>
+        <h4>Shrimp &amp; scallops</h4>
+        <p>Extra-large shrimp and dry sea scallops.</p>
+        <div class="price">Market price — call</div>
+      </div>
+      <div class="product">
+        <span class="badge badge-navy">Live tanks</span>
+        <h4>Clams, oysters &amp; mussels</h4>
+        <p>Little necks and PEI mussels — live, by the dozen or the bushel.</p>
+        <div class="price">Market price — call</div>
+      </div>
+      <div class="product">
+        <span class="badge badge-red">Steamed on-site</span>
+        <h4>Lobster &amp; snow crab legs</h4>
+        <p>Live lobsters, steamed while you wait if you'd like.</p>
+        <div class="price">Market price — call</div>
+      </div>
+    </div>
+    <div class="bushel-bar">
+      <div>
+        <h3>By the bushel. By the case.</h3>
+        <p>Retail at the counter, wholesale to restaurants — same fish, same standards.</p>
+      </div>
+      <a class="btn btn-secondary" href="#wholesale">Wholesale inquiries</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Blue crab feature — red accent band, tilted photo cards ===== -->
+<section class="crab" id="crabs">
+  <div class="wrap crab-grid">
+    <div class="crab-card">
+      <span class="eyebrow">The signature item</span>
+      <h2>Live Jersey blue claws, in season and by the bushel</h2>
+      <p>When crab season hits, the bushels move fast. Hard shells, soft shells when they're running, and females that regulars swear by. We'll steam and season them on-site — bring them home hot.</p>
+      <p class="small">Seasonal availability — call ahead to reserve a bushel for the weekend.</p>
+      <a class="btn btn-secondary" href="tel:+17322495835">Call ahead for bushels</a>
+    </div>
+    <div class="crab-photos">
+      <figure class="ph1"><img src="../images/archar-02.jpg" alt="A live blue claw crab held up at the market"></figure>
+      <figure class="ph2"><img src="../images/archar-07.jpg" alt="A bushel basket full of live blue crabs"></figure>
+      <figure class="ph3"><img src="../images/archar-08.jpeg" alt="Trays of steamed and seasoned blue crabs"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Our story — photo band with centered floating card ===== -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="story-card">
+      <span class="badge badge-navy">Since 1983 · Somerset, NJ</span>
+      <h2>Four decades on Hamilton Street</h2>
+      <p>Archar Seafood has been East Franklin's fish market for over 40 years. Ask around the neighborhood and you'll hear the same things: the fish is fresh, the prices are fair, and Michael behind the counter makes you feel like family.</p>
+      <p>Customers drive in from across the Tri-State Area for the blue claws and leave with dinner recommendations. That's not something you can ship in a box — you have to come by.</p>
+      <!-- Placeholder: founding story, the name "Archar", owner photo — pending owner interview -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== Sustainability — navy-tint band ===== -->
+<section class="sustain" id="sustainability">
+  <div class="wrap sustain-inner">
+    <span class="eyebrow">Honest sourcing</span>
+    <h2>Wild-caught, and honest about the season</h2>
+    <p>Most of what's in our case is wild-caught, and we don't pretend otherwise when it isn't. When something's out of season, we'll tell you — and point you to what's running instead.</p>
+    <p>Ask us where today's fish came from. If we can't answer, we shouldn't be selling it.</p>
+    <!-- Placeholder copy: sourcing specifics & any certifications pending owner input — do not overclaim -->
+  </div>
+</section>
+
+<!-- ===== Wholesale ===== -->
+<section class="wholesale" id="wholesale">
+  <div class="wrap wholesale-grid">
+    <div>
+      <span class="eyebrow">For restaurants &amp; hotels</span>
+      <h2>Wholesale, without the middleman</h2>
+      <p>We supply restaurants across the area with the same fish we sell over the counter — because it comes from the same case.</p>
+      <ul>
+        <li><strong>By the case</strong> — whiting, porgies, tilapia, croakers, snapper and more</li>
+        <li><strong>Custom cutting</strong> — fillets, steaks, and portions to your spec</li>
+        <li><strong>Live shellfish</strong> — crabs, clams, oysters, and lobster by the bushel</li>
+        <li><strong>Call-ahead pickup</strong> — order in the morning, ready by lunch</li>
+      </ul>
+      <p class="small">Prefer the phone? So do we: <a href="tel:+17322495835">(732) 249-5835</a></p>
+    </div>
+    <form class="form-card" action="#" method="post">
+      <h3>Wholesale &amp; pre-order inquiry</h3>
+      <p class="small">Prototype form — not yet connected. Submissions will go to the shop's email once confirmed.</p>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-type">I'm interested in</label>
+        <select id="f-type" name="type">
+          <option>Retail pre-order (pickup)</option>
+          <option>Wholesale — restaurant / hotel</option>
+          <option>Seafood boil / event</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-msg">What do you need?</label>
+        <textarea id="f-msg" name="message" rows="4" placeholder="e.g. 2 bushels of blue claws for Saturday pickup"></textarea>
+      </div>
+      <button class="btn btn-secondary" type="submit">Send inquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== Reviews — sea salt band ===== -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div>
+        <span class="eyebrow">What the neighborhood says</span>
+        <h2>4.9 stars, and they mean it</h2>
+      </div>
+      <div class="stars"><span>★★★★★</span> 4.9 average across 400+ ratings</div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review">
+        <blockquote>"The fish stayed fresh for days after I brought it home. You can't get this quality at a supermarket."</blockquote>
+        <cite>Verified customer review</cite>
+      </div>
+      <div class="review">
+        <blockquote>"Michael is funny, professional, and makes you feel like family. Best seafood market in the Tri-State Area."</blockquote>
+        <cite>Verified customer review</cite>
+      </div>
+      <div class="review">
+        <blockquote>"Worth the hour-and-a-half drive. The blue claw crabs alone are worth the trip — and the prices are beyond reasonable."</blockquote>
+        <cite>Verified customer review</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Visit — navy band ===== -->
+<section class="visit on-dark" id="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow">Visit the market</span>
+      <h2>Come see what's on ice</h2>
+      <p>725 Hamilton St, Somerset, NJ 08873 — in the East Franklin section of Franklin Township, with parking out front.</p>
+      <table class="hours">
+        <tr><td>Monday</td><td>Closed</td></tr>
+        <tr><td>Tuesday – Thursday</td><td>11am – 5pm</td></tr>
+        <tr><td>Friday – Saturday</td><td>11am – 5pm*</td></tr>
+        <tr><td>Sunday</td><td>12pm – 4pm</td></tr>
+      </table>
+      <p class="small" style="color:#B9C8DD">*Some listings show 6pm close Fri–Sat — call to confirm before a late visit.</p>
+      <p><a href="https://maps.google.com/?q=725+Hamilton+St,+Somerset,+NJ+08873" target="_blank" rel="noopener">Get directions →</a></p>
+    </div>
+    <div class="visit-card">
+      <h3>Skip the wait</h3>
+      <p>Call ahead and your order — cut, cleaned, or steamed — is ready when you walk in.</p>
+      <a class="btn btn-primary" href="tel:+17322495835">Call (732) 249-5835</a>
+      <a class="btn btn-ghost" href="#wholesale">Send an inquiry instead</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="#top">
+        <img src="../images/archar-logo.jpeg" alt="Archar Seafood logo">
+        <span>Archar <em>Seafood</em></span>
+      </a>
+      <nav class="foot-links">
+        <a href="#way">The Archar way</a>
+        <a href="#catch">Fresh catch</a>
+        <a href="#crabs">Blue crabs</a>
+        <a href="#story">Our story</a>
+        <a href="#wholesale">Wholesale</a>
+        <a href="#visit">Visit us</a>
+      </nav>
+    </div>
+    <div class="fine">
+      © 2026 Archar Seafood · 725 Hamilton St, Somerset, NJ 08873 · <a href="tel:+17322495835">(732) 249-5835</a> · Retail &amp; wholesale · Closed Mondays
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
