@@ -139,7 +139,9 @@ header { position: sticky; top: 0; z-index: 50; background: var(--white); border
 /* Fresh catch — navy tint band */
 .catch { background: var(--navy-tint); }
 .catch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 24px; margin-top: 48px; }
-.product { background: var(--white); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: 24px; }
+.product { background: var(--white); border: 1px solid var(--color-border); border-radius: var(--radius-card); overflow: hidden; }
+.product img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--navy-tint); }
+.product-body { padding: 24px; }
 .product h4 { margin: 12px 0 6px; }
 .product p { font-size: 14px; line-height: 1.5; margin-bottom: 10px; }
 .product .price { font-family: var(--font-display); font-weight: 800; color: var(--archar-red); font-size: 15px; }
