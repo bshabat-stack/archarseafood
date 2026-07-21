@@ -95,7 +95,7 @@ header { position: sticky; top: 0; z-index: 50; background: var(--white); border
 }
 
 /* Hero — navy band */
-.hero { background: var(--harbor-navy); color: #fff; padding: 96px 0; }
+.hero { background: var(--harbor-navy); color: #fff; padding: 96px 0 160px; position: relative; }
 .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; }
 .hero h1 { color: #fff; margin: 0 0 20px; }
 .hero p { font-size: 1.2rem; color: #D7E1EF; max-width: 34em; margin-bottom: 32px; }
@@ -106,6 +106,26 @@ header { position: sticky; top: 0; z-index: 50; background: var(--white); border
 .hero-photo img { border-radius: 4px; aspect-ratio: 4/3.4; object-fit: cover; width: 100%; }
 .hero-photo figcaption { font-size: 14px; color: var(--color-text); padding: 10px 4px 2px; }
 @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+/* Animated wave divider between the navy hero and the white section below */
+.wave-divider { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 110px;
+                display: block; pointer-events: none; }
+.wave-bob { animation: wave-bob 5s ease-in-out infinite; transform-origin: center; will-change: transform; }
+.wave-bob:nth-of-type(2) { animation-duration: 6.7s; animation-delay: -1.8s; }
+.wave-bob:nth-of-type(3) { animation-duration: 8.3s; animation-delay: -3.1s; }
+.wave-slide { animation: wave-slide 11s cubic-bezier(.55,.5,.45,.5) infinite; will-change: transform; }
+.wave-bob:nth-of-type(2) .wave-slide { animation-duration: 17s; animation-delay: -4s; }
+.wave-bob:nth-of-type(3) .wave-slide { animation-duration: 25s; animation-delay: -9s; }
+@keyframes wave-slide {
+  from { transform: translate3d(-90px, 0, 0); }
+  to   { transform: translate3d(85px, 0, 0); }
+}
+@keyframes wave-bob {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, 3px, 0); }
+}
+@media (max-width: 860px) { .wave-divider { height: 70px; } .hero { padding-bottom: 110px; } }
+@media (prefers-reduced-motion: reduce) { .wave-bob, .wave-slide { animation: none !important; } }
 
 /* Three steps */
 .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-top: 48px; }
@@ -198,6 +218,11 @@ header { position: sticky; top: 0; z-index: 50; background: var(--white); border
 .review { background: var(--white); border-radius: var(--radius-card); box-shadow: var(--shadow-card); padding: 32px; }
 .review blockquote { font-size: 17px; margin-bottom: 16px; }
 .review cite { font-style: normal; font-size: 14px; font-weight: 700; color: var(--harbor-navy); }
+.review cite span { font-weight: 400; color: var(--color-text); }
+
+.reviews-more { margin-top: 32px; text-align: center; }
+.reviews-more a { font-family: var(--font-display); font-weight: 800; color: var(--harbor-navy); text-decoration: none; }
+.reviews-more a:hover { color: var(--archar-red); }
 
 /* Visit — navy band */
 .visit { background: var(--harbor-navy); color: #fff; }
@@ -213,6 +238,14 @@ header { position: sticky; top: 0; z-index: 50; background: var(--white); border
 .visit-card p { color: var(--color-text); margin-bottom: 24px; }
 .visit-card .btn { width: 100%; text-align: center; margin-bottom: 12px; }
 @media (max-width: 900px) { .visit-grid { grid-template-columns: 1fr; } }
+
+/* Map — full-bleed embed above the footer */
+.map-section { padding: 0; background: var(--white); }
+.map-embed { position: relative; width: 100%; height: 420px; background: var(--navy-tint); }
+.map-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+.map-bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-top: 24px; padding-bottom: 24px; }
+.map-bar p { color: var(--color-text); }
+@media (max-width: 640px) { .map-embed { height: 320px; } }
 
 /* Footer — sea salt */
 footer { background: var(--sea-salt); padding: 48px 0 32px; }

@@ -87,7 +87,7 @@
         <a class="btn btn-ghost-light" href="#catch">See today's catch</a>
       </div>
       <div class="hero-proof">
-        <div><strong>4.9 ★</strong> 400+ customer ratings</div>
+        <div><strong>4.9 ★</strong> 1,400+ customer ratings</div>
         <div><strong>40+ years</strong> on Hamilton Street</div>
         <div><strong>Cut to order</strong> right at the counter</div>
       </div>
@@ -97,6 +97,22 @@
       <figcaption>The counter on a weekday morning — everything on ice, nothing pre-cut.</figcaption>
     </figure>
   </div>
+
+  <!-- Animated waves washing into the white section below -->
+  <svg class="wave-divider" viewBox="0 24 150 28" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <defs>
+      <path id="wave-shape" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z"></path>
+    </defs>
+    <g class="wave-bob">
+      <use class="wave-slide" href="#wave-shape" x="48" y="0" fill="rgba(255,255,255,.28)"></use>
+    </g>
+    <g class="wave-bob">
+      <use class="wave-slide" href="#wave-shape" x="48" y="5" fill="rgba(255,255,255,.55)"></use>
+    </g>
+    <g class="wave-bob">
+      <use class="wave-slide" href="#wave-shape" x="48" y="11" fill="#ffffff"></use>
+    </g>
+  </svg>
 </section>
 
 <!-- ===== The Archar Way ===== -->
@@ -294,22 +310,25 @@
         <span class="eyebrow">What the neighborhood says</span>
         <h2>4.9 stars, and they mean it</h2>
       </div>
-      <div class="stars"><span aria-hidden="true">★★★★★</span> 4.9 average across 400+ ratings</div>
+      <div class="stars"><span aria-hidden="true">★★★★★</span> 4.9 average across 1,400+ Google ratings</div>
     </div>
     <div class="reviews-grid">
       <div class="review">
-        <blockquote>"The fish stayed fresh for days after I brought it home. You can't get this quality at a supermarket."</blockquote>
-        <cite>Verified customer review</cite>
+        <blockquote>"Really great super fresh seafood. This has been our go to place for the best seafood. … Michael was very helpful suggesting halibut fillet on the grill. My wife and her mom said the best they have ever had."</blockquote>
+        <cite>Rick G. <span>· Google review</span></cite>
       </div>
       <div class="review">
-        <blockquote>"Michael is funny, professional, and makes you feel like family. Best seafood market in the Tri-State Area."</blockquote>
-        <cite>Verified customer review</cite>
+        <blockquote>"Went to Archar last Friday for a bushel and half of blue crabs. Not only were they meaty and delicious but the owner was so friendly, that I felt like I known him for years. This is now, my go to place for Crabs."</blockquote>
+        <cite>Jacqueline J. <span>· Google review</span></cite>
       </div>
       <div class="review">
-        <blockquote>"Worth the hour-and-a-half drive. The blue claw crabs alone are worth the trip — and the prices are beyond reasonable."</blockquote>
-        <cite>Verified customer review</cite>
+        <blockquote>"Michael is truly a one of a kind. He makes everyone feel right at home. He is very knowledgeable about seafood and always makes great recommendations. If you are looking for the best fresh seafood in NJ with impeccable service, stop in and see Michael."</blockquote>
+        <cite>Carolyn S. <span>· Google review</span></cite>
       </div>
     </div>
+    <p class="reviews-more">
+      <a href="https://maps.google.com/?cid=12820526621383545980" target="_blank" rel="noopener">Read more reviews on Google →</a>
+    </p>
   </div>
 </section>
 
@@ -326,7 +345,6 @@
         <tr><td>Friday – Saturday</td><td>11am – 5pm</td></tr>
         <tr><td>Sunday</td><td>12pm – 4pm</td></tr>
       </table>
-      <p><a href="https://maps.google.com/?q=725+Hamilton+St,+Somerset,+NJ+08873" target="_blank" rel="noopener">Get directions →</a></p>
     </div>
     <div class="visit-card">
       <h3>Skip the wait</h3>
@@ -334,6 +352,24 @@
       <a class="btn btn-primary" href="tel:+17322495835">Call (732) 249-5835</a>
       <a class="btn btn-ghost" href="#wholesale">Send an inquiry instead</a>
     </div>
+  </div>
+</section>
+
+<!-- ===== Map — full-bleed Google map ===== -->
+<section class="map-section" id="map" aria-label="Map to Archar Seafood">
+  <div class="map-embed">
+    <iframe
+      src="https://www.google.com/maps?q=Archar+Seafood,+725+Hamilton+St,+Somerset,+NJ+08873&amp;output=embed"
+      title="Google Map showing Archar Seafood at 725 Hamilton St, Somerset, NJ 08873"
+      width="600" height="450" style="border:0" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+  </div>
+  <div class="wrap map-bar">
+    <div>
+      <h3>Archar Seafood</h3>
+      <p class="small">725 Hamilton St, Somerset, NJ 08873 · Parking out front</p>
+    </div>
+    <a class="btn btn-secondary" href="https://maps.google.com/?q=725+Hamilton+St,+Somerset,+NJ+08873" target="_blank" rel="noopener">Get directions</a>
   </div>
 </section>
 
@@ -353,6 +389,7 @@
         <a href="#story">Our story</a>
         <a href="#wholesale">Wholesale</a>
         <a href="#visit">Visit us</a>
+        <a href="#map">Find us</a>
       </nav>
     </div>
     <div class="fine">
