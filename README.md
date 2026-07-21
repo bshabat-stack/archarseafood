@@ -23,7 +23,9 @@ One-time activation:
 2. **Deploy → New deployment → Web app**, Execute as **Me**, Who has access: **Anyone** → authorize → copy the `/exec` URL.
 3. Paste that URL into `SHEETS_WEBHOOK_URL` at the top of `js/main.js` and push.
 
-Until step 3 the form shows a "call us" fallback on submit. The script writes the header row automatically on the first lead. Columns: Timestamp, Name, Phone, Interested in, Message, Source (`?source=…` from shared links, else "direct").
+Until step 3 the form shows a "call us" fallback on submit. `ensureHeader` writes — and repairs — the header row on every submission, so the columns always match the data even if the sheet was pre-seeded with a different schema. Columns: Timestamp, Name, Phone, Interested in, Message, Source (`?source=…` from shared links, else "direct").
+
+To push a code change to an already-deployed script, edit `Code.gs` in the Apps Script editor, then **Deploy → Manage deployments → (pencil) Edit → Version: New version → Deploy** — this keeps the same `/exec` URL. Creating a *new* deployment would mint a new URL and require updating `js/main.js` again.
 
 Reference documents: [website-plan.md](website-plan.md) · [archar-seafood-design-tokens.md](archar-seafood-design-tokens.md) · [archar-seafood-business-profile.md](archar-seafood-business-profile.md)
 
@@ -34,7 +36,7 @@ Reference documents: [website-plan.md](website-plan.md) · [archar-seafood-desig
 - [ ] Owner interview: story behind the name "Archar", Michael's full name + photo permission, sustainability sourcing specifics.
 - [ ] Replace review-sourced placeholder photos in `images/` with original photography (storefront, counter, crab bushels).
 - [ ] Purchase domain (check archarseafood.com), then in `index.html` uncomment the `og:url` / `og:image` / `canonical` block and fill in the domain.
-- [ ] Activate lead collection: deploy `apps-script/Code.gs` as a web app and set `SHEETS_WEBHOOK_URL` in `js/main.js` (see "Lead collection" above).
+- [x] Activate lead collection: `apps-script/Code.gs` deployed as a web app; `SHEETS_WEBHOOK_URL` set in `js/main.js` and verified end-to-end (see "Lead collection" above).
 - [ ] Link up Google Business Profile.
 
 ## Local preview

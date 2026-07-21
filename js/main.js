@@ -1,7 +1,7 @@
 // Google Sheets lead-collection webhook (Apps Script web app — see
 // apps-script/Code.gs). Leave empty until the web app is deployed; the form
 // then shows a call-us fallback instead of silently dropping the submission.
-var SHEETS_WEBHOOK_URL = '';
+var SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycby_c3HN_W-N4K5g15Wfh2x5IisHIeFpfHBe786k0ngBziSrm5oygdeXB1t-IZLpd7vK/exec';
 
 // Mobile navigation toggle
 (function () {

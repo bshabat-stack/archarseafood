@@ -37,16 +37,25 @@ function doPost(e) {
     }
 
     var sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheets()[0];
-    if (sheet.getLastRow() === 0) {
-      sheet.appendRow(HEADER);
-      sheet.getRange(1, 1, 1, HEADER.length).setFontWeight('bold');
-    }
+    ensureHeader(sheet);
     sheet.appendRow([new Date(), name, phone, type, message, source]);
 
     return respond({ ok: true });
   } finally {
     lock.releaseLock();
   }
+}
+
+// Guarantee row 1 is Archar's header. Repairs a stale/mismatched header (e.g. a
+// leftover schema from another project) so appended rows never drift out of
+// alignment with their labels. Only touches row 1, never the data below it.
+function ensureHeader(sheet) {
+  var width = HEADER.length;
+  var current = sheet.getLastRow() === 0
+    ? []
+    : sheet.getRange(1, 1, 1, width).getValues()[0];
+  if (current.join('') === HEADER.join('')) return;
+  sheet.getRange(1, 1, 1, width).setValues([HEADER]).setFontWeight('bold');
 }
 
 function clean(value, max) {
